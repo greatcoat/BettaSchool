@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>BettaSchool | Brigitta Gaylard</title>
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Warm, professional online Art, English & Life Orientation tutoring from Brigitta Gaylard. 30+ years of teaching experience with proven Matric Visual Arts portfolio prep results.">
+    <meta name="keywords" content="art tutor, online art lessons, matric art portfolio, grade 10 art tutoring, grade 12 visual arts, South African art teacher, English tutor, Life Orientation tutor, BettaSchool">
+    <meta name="author" content="BettaSchool">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="BettaSchool | Brigitta Gaylard">
+    <meta property="og:description" content="Online Art, English & Life Orientation tutoring from a teacher with 30 years of experience and matric results to prove it.">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind CSS with Forms and Container Queries -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    
+    <!-- Custom style sheet for interactive background effects & scroll reveals -->
+    <link href="style.css" rel="stylesheet">
+
+    <!-- Tailwind Theme Configuration -->
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-bright": "#fcf9f4",
+                      "inverse-surface": "#31302d",
+                      "primary": "#994124",
+                      "surface-container": "#f0ede9",
+                      "on-tertiary-fixed": "#001f24",
+                      "on-error": "#ffffff",
+                      "inverse-primary": "#ffb59f",
+                      "primary-fixed-dim": "#ffb59f",
+                      "on-secondary-fixed-variant": "#384c2d",
+                      "surface-container-highest": "#e5e2dd",
+                      "secondary-fixed-dim": "#b6cea5",
+                      "background": "#fcf9f4",
+                      "surface-tint": "#9c4326",
+                      "on-surface": "#1c1c19",
+                      "on-surface-variant": "#56423d",
+                      "on-secondary": "#ffffff",
+                      "secondary-container": "#cfe7bd",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed-variant": "#7d2c11",
+                      "primary-container": "#b9583a",
+                      "secondary-fixed": "#d2eac0",
+                      "tertiary-fixed-dim": "#9fced8",
+                      "on-primary-fixed": "#3a0a00",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary": "#34636b",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed": "#bbebf4",
+                      "secondary": "#4f6443",
+                      "surface-dim": "#dcdad5",
+                      "tertiary-container": "#4d7c84",
+                      "surface-container-high": "#ebe8e3",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed-variant": "#1c4d55",
+                      "inverse-on-surface": "#f3f0eb",
+                      "on-secondary-container": "#536947",
+                      "on-primary-container": "#fffbff",
+                      "on-error-container": "#93000a",
+                      "surface-container-low": "#f6f3ee",
+                      "on-background": "#1c1c19",
+                      "primary-fixed": "#ffdbd0",
+                      "outline-variant": "#dcc1b9",
+                      "surface-variant": "#e5e2dd",
+                      "on-tertiary-container": "#f7feff",
+                      "outline": "#89726c",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed": "#0e2006",
+                      "surface": "#fcf9f4"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px",
+                      "2xl": "1rem",
+                      "3xl": "1.5rem",
+                      "4xl": "2rem"
+              },
+              "spacing": {
+                      "xl": "80px",
+                      "md": "24px",
+                      "gutter": "24px",
+                      "xs": "4px",
+                      "margin-mobile": "16px",
+                      "margin-desktop": "64px",
+                      "sm": "12px",
+                      "base": "8px",
+                      "lg": "48px"
+              },
+              "fontFamily": {
+                      "headline-xl": ["Bricolage Grotesque"],
+                      "headline-lg": ["Bricolage Grotesque"],
+                      "label-md": ["Plus Jakarta Sans"],
+                      "body-lg": ["Plus Jakarta Sans"],
+                      "headline-md": ["Bricolage Grotesque"],
+                      "body-md": ["Plus Jakarta Sans"],
+                      "headline-lg-mobile": ["Bricolage Grotesque"],
+                      "label-sm": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                      "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                      "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                      "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                      "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                      "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                      "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                      "label-sm": ["12px", { "lineHeight": "1.4", "fontWeight": "500" }]
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+
+    <!-- Interactive Background Canvas (Wet-on-wet paint loop) -->
+    <canvas id="paint-canvas"></canvas>
+
+
+    <!-- Paper Overlay Texture (Subtle background noise) -->
+    <div class="paper-texture-overlay bg-paper"></div>
+
+    <!-- TopAppBar Header -->
+    <header class="fixed top-0 w-full z-50 bg-surface-container-low/85 backdrop-blur-md border-b border-outline-variant/15 transition-all duration-300">
+        <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-7xl mx-auto">
+            <a class="flex items-center gap-2 group" href="#">
+                <span class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary">BettaSchool</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8" id="nav-menu">
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Home</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#subjects">Subjects</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#about">About Brigitta</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#why-us">Why BettaSchool</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#contact">Contact</a>
+            </nav>
+            
+            <div class="flex items-center gap-2">
+                <a class="hidden md:inline-flex items-center justify-center bg-primary text-on-primary font-label-md text-label-md rounded-full px-6 py-3 hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-sm" href="https://calendar.app.google/DrDrZ8fAkFFFxFdj8" target="_blank">
+                    Book a Free Intro Call
+                </a>
+                <button aria-label="Menu" class="md:hidden p-2 text-primary" id="mobile-menu-btn">
+                    <span class="material-symbols-outlined text-[24px]">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10">
+        <!-- Hero Section -->
+        <section class="relative min-h-[90vh] flex items-center justify-center pt-24 pb-xl overflow-hidden px-margin-mobile md:px-margin-desktop">
+            <!-- Watercolor Static Underlay (Canvas overlays this) -->
+            <div class="absolute inset-0 z-0 opacity-20 mix-blend-multiply pointer-events-none">
+                <img alt="" aria-hidden="true" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMf_bTMqBJnMHpDQznUtLvDoc-SnMDuN0BP9xqYaQkigr1HcBsfcAgUBaLZ0eGvrwWZaAlWc6mtCJrbzFULhzpHrMh5924t3_v2jPpT19PsJiwUk2XgF_HdOuKrstMkjoKM0epQfvInlSRd1pchMNNS4LK8_OuffcL73v2M1p9uT4lbfdP4yT3q21mEBFdJabcfBez_VVZEWK7gKiIkZEr7tToikcee6VV-Cp7IuOZvYlXn0QiV4DkshhnXXQtvhgvQV22--usYTM">
+            </div>
+            
+            <div class="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center gap-6 mt-16">
+                <h1 class="font-headline-xl text-headline-xl md:text-[64px] md:leading-[1.1] text-on-surface text-balance">
+                    Your child deserves a teacher who sees their potential
+                </h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto text-balance mt-4">
+                    Online Art, English &amp; Life Orientation tutoring from a teacher with 30 years of experience and matric results to prove it.
+                </p>
+                <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a class="inline-flex items-center justify-center bg-primary text-on-primary font-label-md text-label-md rounded-full px-8 py-4 hover:bg-primary-container transition-all duration-300 shadow-lg shadow-primary/20 hover:-translate-y-1" href="https://calendar.app.google/DrDrZ8fAkFFFxFdj8" target="_blank">
+                        Book a Free Intro Call
+                    </a>
+                    <a class="inline-flex items-center justify-center bg-surface-container text-on-surface font-label-md text-label-md rounded-full px-8 py-4 hover:bg-surface-container-high transition-colors duration-300" href="#subjects">
+                        See What I Teach
+                    </a>
+                </div>
+            </div>
+            
+
+        </section>
+
+        <!-- Testimonial Section -->
+        <section class="px-margin-mobile md:px-margin-desktop py-12 reveal" id="reviews">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="font-headline-lg text-headline-lg md:text-[40px] text-on-surface mb-4">Kind Words from Students</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
+                    <!-- Testimonial 1 -->
+                    <div class="flex flex-col gap-4 rounded-3xl bg-surface-bright border border-outline-variant/30 shadow-sm transition-all hover:shadow-md p-6 md:p-8 hover-glow reveal reveal-delay-1">
+                        <div>
+                            <h3 class="font-headline-md text-headline-md text-on-surface">Hannah O.</h3>
+                            <p class="font-label-sm text-label-sm uppercase tracking-widest text-primary mt-1">Matric Art Student</p>
+                        </div>
+                        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">"I enjoyed having Ms Gaylard as my Matric art/design teacher! Although our time together was short, Ms Gaylard was a great support and encouragement to me throughout the year, frequently keeping me accountable with time management and helping me with brainstorming. I found her assistance helpful and insightful and her company pleasant!"</p>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="flex flex-col gap-4 rounded-3xl bg-surface-bright border border-outline-variant/30 shadow-sm transition-all hover:shadow-md p-6 md:p-8 hover-glow reveal reveal-delay-2">
+                        <div>
+                            <h3 class="font-headline-md text-headline-md text-on-surface">William Halton</h3>
+                            <p class="font-label-sm text-label-sm uppercase tracking-widest text-primary mt-1">Matric LO Student</p>
+                        </div>
+                        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">"Ms Brigitta Gaylard was extremely helpful in preparing me for my Life Orientation exam. On very short notice, she equipped me with the necessary content and skills to adequately prepare for my June examination. I found her to be efficient and effective in revising the topics of Life Orientation and would highly recommend her services for other Matric LO students."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subjects Section -->
+        <section class="py-xl px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto bg-transparent reveal" id="subjects">
+            <div class="text-center mb-16">
+                <h2 class="font-headline-lg text-headline-lg md:text-[40px] text-on-surface mb-4">What I Teach</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                <!-- Visual Art & Design -->
+                <div class="relative rounded-[2.5rem] p-8 md:p-10 overflow-hidden group hover:shadow-xl hover:shadow-secondary/10 transition-all duration-500 border border-outline-variant/30 flex flex-col h-full bg-surface-bright/70 backdrop-blur-sm reveal reveal-delay-1">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-secondary-fixed/40 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center mb-8 shadow-sm">
+                            <span class="material-symbols-outlined text-[32px] icon-fill">palette</span>
+                        </div>
+                        <h3 class="font-headline-md text-headline-md text-on-surface mb-4">Visual Art &amp; Design</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant">From foundational techniques to matric portfolio preparation. I help students develop their artistic voice while building the technical skills examiners want to see. My matric art classes have averaged up to 91.6% — and produced students exhibited internationally.</p>
+                    </div>
+                </div>
+                <!-- English -->
+                <div class="relative rounded-[2.5rem] p-8 md:p-10 overflow-hidden group hover:shadow-xl hover:shadow-tertiary/10 transition-all duration-500 border border-outline-variant/30 flex flex-col h-full bg-surface-bright/70 backdrop-blur-sm reveal reveal-delay-2">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-tertiary-fixed/40 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center mb-8 shadow-sm">
+                            <span class="material-symbols-outlined text-[32px]">menu_book</span>
+                        </div>
+                        <h3 class="font-headline-md text-headline-md text-on-surface mb-4">English</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant">Literature analysis, essay writing, creative writing, and language skills. Whether your child needs to strengthen their comprehension or wants to excel in creative writing, I bring both structure and a love of language to every session.</p>
+                    </div>
+                </div>
+                <!-- Life Orientation -->
+                <div class="relative rounded-[2.5rem] p-8 md:p-10 overflow-hidden group hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 border border-outline-variant/30 flex flex-col h-full bg-surface-bright/70 backdrop-blur-sm reveal reveal-delay-3">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-primary-fixed/40 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center mb-8 shadow-sm">
+                            <span class="material-symbols-outlined text-[32px]">psychology</span>
+                        </div>
+                        <h3 class="font-headline-md text-headline-md text-on-surface mb-4">Life Orientation</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant">More than a tick-box subject. I help students develop critical thinking, personal responsibility, and the soft skills that matter beyond matric — from time management to career readiness.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section (Asymmetric Layout) -->
+        <section class="py-xl bg-transparent reveal" id="about">
+            <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row gap-16 items-center">
+                <!-- Portrait side -->
+                <div class="w-full md:w-1/2 relative reveal reveal-delay-1">
+                    <!-- Decorative background blob -->
+                    <div class="absolute inset-0 bg-primary-fixed/40 rounded-[4rem] transform rotate-3 scale-105 -z-10"></div>
+                    <img alt="Brigitta Gaylard Portrait" class="w-full h-auto rounded-[3rem] object-cover shadow-lg shadow-surface-tint/10 border-4 border-surface-container-lowest relative z-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8bmLocVdQzmzvkLyqWKthu25jdEcJ1W0Lnpj94VTDuZkUmp4yE1X3xagLcbMwXYJcMrYncu_TEv4_3oRZ1B-OwTmLYYnCFCJHBxVfh298PMIV6Fiq2H3Wl0si0gMI1jvx9yrrsHEkgcM_5wSDlNdFX9SQlbXpNcP6Qcx1dKnkxIH6v-0Ou4XjKCXokkgnGS-k26rpUe4p-2ClR-GQq4YB2CyQ-4UUuL4MXz6N-upo0-tkMZeFy31YXQaM4ZpTjKsF9Kw8OO8hnTE">
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -right-6 md:-right-12 bg-surface-container-lowest p-6 rounded-2xl shadow-xl shadow-surface-tint/5 border border-outline-variant/20 z-20 max-w-[240px]">
+                        <p class="font-headline-md text-headline-md text-primary mb-1">91.6%</p>
+                        <p class="font-label-sm text-label-sm text-on-surface-variant">Highest Matric Art Aggregate</p>
+                    </div>
+                </div>
+                
+                <!-- Biography side -->
+                <div class="w-full md:w-1/2 flex flex-col gap-6 reveal reveal-delay-2">
+                    <div>
+                        <span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">The Teacher Behind BettaSchool</span>
+                        <h2 class="font-headline-lg text-headline-lg md:text-[40px] text-on-surface mt-2 mb-4">Meet Brigitta Gaylard</h2>
+                    </div>
+                    <div class="prose font-body-md text-body-md text-on-surface-variant space-y-4">
+                        <p>With a BA in Fine Arts and a Higher Education Diploma (HED), Brigitta brings a unique blend of formal academic structure and boundless creative exploration to her teaching.</p>
+                        <p>I hold a BA in Fine Arts from the University of Natal and a Higher Education Diploma. I'm SACE registered and have marked matric papers for both the Department of Education and the IEB.</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mt-4">
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-secondary mt-0.5 icon-fill text-[20px]">verified</span>
+                            <span class="font-body-md text-body-md text-on-surface">91.6% highest matric art aggregate</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-secondary mt-0.5 icon-fill text-[20px]">verified</span>
+                            <span class="font-body-md text-body-md text-on-surface">Students exhibited in Monaco</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-secondary mt-0.5 icon-fill text-[20px]">verified</span>
+                            <span class="font-body-md text-body-md text-on-surface">30+ years teaching experience</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-secondary mt-0.5 icon-fill text-[20px]">verified</span>
+                            <span class="font-body-md text-body-md text-on-surface">SACE registered educator</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why BettaSchool Section -->
+        <section class="py-xl px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto bg-transparent reveal" id="why-us">
+            <div class="text-center mb-16">
+                <h2 class="font-headline-lg text-headline-lg md:text-[40px] text-on-surface mb-4">Why parents choose BettaSchool</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="rounded-2xl p-6 border border-outline-variant/20 hover:-translate-y-2 transition-transform duration-300 bg-surface-container-low/80 backdrop-blur-sm reveal reveal-delay-1">
+                    <div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center mb-6 shadow-sm">
+                        <span class="material-symbols-outlined text-[24px]">auto_awesome</span>
+                    </div>
+                    <h3 class="font-label-md text-label-md text-on-surface mb-2">One-on-One Attention</h3>
+                    <p class="font-body-sm text-label-sm text-on-surface-variant">Every session is tailored to your child's pace, strengths, and areas for growth. No generic lesson plans — just focused, personalised teaching.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="rounded-2xl p-6 border border-outline-variant/20 hover:-translate-y-2 transition-transform duration-300 mt-0 lg:mt-8 bg-surface-container-low/80 backdrop-blur-sm reveal reveal-delay-2">
+                    <div class="w-12 h-12 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center mb-6 shadow-sm">
+                        <span class="material-symbols-outlined text-[24px]">trending_up</span>
+                    </div>
+                    <h3 class="font-label-md text-label-md text-on-surface mb-2">Proven Matric Results</h3>
+                    <p class="font-body-sm text-label-sm text-on-surface-variant">This isn't theory. My matric art students have consistently achieved 84–91% aggregates, and Eden College earned the highest number of A's per candidate in South Africa in 2018 and 2019.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="rounded-2xl p-6 border border-outline-variant/20 hover:-translate-y-2 transition-transform duration-300 bg-surface-container-low/80 backdrop-blur-sm reveal reveal-delay-3">
+                    <div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center mb-6 shadow-sm">
+                        <span class="material-symbols-outlined text-[24px]">brush</span>
+                    </div>
+                    <h3 class="font-label-md text-label-md text-on-surface mb-2">Art + Academics Together</h3>
+                    <p class="font-body-sm text-label-sm text-on-surface-variant">A Fine Arts background combined with decades of classroom teaching means your child gets creative thinking and academic rigour in the same session.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="rounded-2xl p-6 border border-outline-variant/20 hover:-translate-y-2 transition-transform duration-300 mt-0 lg:mt-8 bg-surface-container-low/80 backdrop-blur-sm reveal reveal-delay-3">
+                    <div class="w-12 h-12 rounded-full bg-surface-tint text-on-primary flex items-center justify-center mb-6 shadow-sm">
+                        <span class="material-symbols-outlined text-[24px]">videocam</span>
+                    </div>
+                    <h3 class="font-label-md text-label-md text-on-surface mb-2">Flexible Online Sessions</h3>
+                    <p class="font-body-sm text-label-sm text-on-surface-variant">Lessons happen online, on a schedule that works for your family. No commute, no disruption — just quality teaching from wherever you are.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Get Started / CTA Section -->
+        <section class="pb-xl px-margin-mobile md:px-margin-desktop reveal" id="contact">
+            <div class="max-w-5xl mx-auto bg-tertiary-container text-on-tertiary-container rounded-3xl p-8 md:p-16 text-center relative overflow-hidden shadow-sm hover-glow reveal reveal-delay-1">
+                <div class="relative z-10 flex flex-col items-center">
+                    <h2 class="font-headline-lg text-headline-lg md:text-[40px] text-on-tertiary-container mb-4">Ready to see what the right teacher can do?</h2>
+                    <p class="font-body-lg text-body-lg text-on-tertiary-container/90 max-w-2xl mx-auto mb-8">
+                        Book a free introductory call and let's talk about how I can help your child.
+                    </p>
+                    <div class="bg-white/10 backdrop-blur-sm px-5 py-2.5 rounded-full inline-flex items-center gap-2 mb-8 border border-white/10">
+                        <span class="material-symbols-outlined text-white/80 text-[20px]">payments</span>
+                        <span class="font-label-md text-label-sm text-white/80">Sessions from R350/hour</span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                        <a class="bg-white text-tertiary font-label-md text-label-md px-8 py-5 rounded-full hover:bg-surface-container transition-all hover:shadow-lg shadow-black/20 w-full sm:w-auto inline-flex items-center justify-center font-bold" href="https://calendar.app.google/DrDrZ8fAkFFFxFdj8" target="_blank">Book a Free Intro Call</a>
+                        <a class="bg-tertiary-container text-white border-2 border-white/40 font-label-md text-label-md px-8 py-5 rounded-full hover:bg-white/10 transition-all w-full sm:w-auto inline-flex items-center justify-center font-bold" href="https://wa.me/27844097767" target="_blank">Send a WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-lg space-y-base md:space-y-0 full-width border-t border-outline-variant/20 bg-background relative z-20">
+        <div class="flex items-center gap-4">
+            <span class="font-headline-md text-headline-md text-primary font-bold">BettaSchool</span>
+        </div>
+        <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:underline hover:text-primary transition-all active:scale-95" href="https://wa.me/27844097767" target="_blank">WhatsApp</a>
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:underline hover:text-primary transition-all active:scale-95" href="mailto:brigittagaylard@gmail.com">Email</a>
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:underline hover:text-primary transition-all active:scale-95" href="https://calendar.app.google/DrDrZ8fAkFFFxFdj8" target="_blank">Book a Call</a>
+        </nav>
+        <div class="text-center md:text-right">
+            <p class="font-body-md text-label-sm text-secondary">
+                © 2026 BettaSchool. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Canvas and Parallax Interaction Script -->
+    <script src="app.js"></script>
+</body>
+</html>

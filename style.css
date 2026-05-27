@@ -1,0 +1,248 @@
+/* Custom Style Sheet for BettaSchool Interactive Effects & Overrides */
+
+/* ==========================================================================
+   1. Interactive Background Canvas Setup
+   ========================================================================== */
+#paint-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0; /* Behind main text content, but in front of background color to mix correctly */
+    pointer-events: none; /* Mouse input tracked on window level */
+}
+
+/* ==========================================================================
+   2. Textured Paper Overlay (Tactile noise filter)
+   ========================================================================== */
+.paper-texture-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 999; /* Always on top of everything to bind page elements together */
+    opacity: 0.05;
+}
+
+/* ==========================================================================
+   3. Floating Art Supplies (Parallax layers)
+   ========================================================================== */
+.floating-art-supplies {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 5; /* Under headers and main content, over background canvas */
+    overflow: hidden;
+}
+
+.art-supply {
+    position: absolute;
+    width: 60px;
+    height: auto;
+    opacity: 0.55;
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    transition: transform 0.1s ease-out;
+}
+
+/* Placements */
+.supply-pencil {
+    top: 18%;
+    right: 6%;
+    width: 40px;
+}
+
+.supply-brush {
+    top: 55%;
+    left: 4%;
+    width: 55px;
+}
+
+.supply-pastel {
+    top: 78%;
+    right: 8%;
+    width: 35px;
+}
+
+/* Hide floating elements on touch screens / mobile to reduce clutter */
+@media (max-width: 768px) {
+    .floating-art-supplies {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   4. Logo & Underline Accents
+   ========================================================================== */
+.logo {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.logo-brush {
+    position: absolute;
+    bottom: -8px;
+    left: -6px;
+    width: 115%;
+    height: 24px;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.logo-stroke-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.logo-text {
+    position: relative;
+    z-index: 10;
+}
+
+/* Brush Underline (Tailwind utility extension) */
+.brush-underline {
+    position: relative;
+    display: inline-block;
+}
+
+.brush-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-color: #cfe7bd; /* secondary-container color */
+    border-radius: 4px 8px 3px 6px;
+    z-index: -1;
+    opacity: 0.65;
+    transform: rotate(-0.5deg);
+}
+
+/* ==========================================================================
+   5. Interactive Micro-effects & Glows
+   ========================================================================== */
+/* Soft tinted shadow for interactivity */
+.hover-glow {
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hover-glow:hover {
+    box-shadow: 0 20px 40px -10px rgba(153, 65, 36, 0.08); /* Primary color */
+    transform: translateY(-4px);
+}
+
+/* Material Symbols customization */
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.icon-fill {
+    font-variation-settings: 'FILL' 1;
+}
+
+/* Custom Scrollbar for studio feel */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #fcf9f4;
+}
+::-webkit-scrollbar-thumb {
+    background: #b6cea5; /* secondary-fixed-dim */
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #4f6443; /* secondary */
+}
+
+/* Interactive helper teaser (Scroll Indicator) */
+.interactive-teaser {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.mouse-icon {
+    width: 20px;
+    height: 32px;
+    border: 2px solid #994124; /* primary */
+    border-radius: 20px;
+    position: relative;
+}
+
+.mouse-wheel {
+    width: 2px;
+    height: 6px;
+    background-color: #994124;
+    border-radius: 2px;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollWheel 2s infinite;
+}
+
+.teaser-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: #994124;
+    text-transform: uppercase;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+@keyframes scrollWheel {
+    0% { opacity: 0; top: 6px; }
+    30% { opacity: 1; }
+    80% { opacity: 0; top: 16px; }
+    100% { opacity: 0; top: 6px; }
+}
+
+/* ==========================================================================
+   6. Scroll Reveal Animations (IntersectionObserver driven)
+   ========================================================================== */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-delay-1 {
+    transition-delay: 0.15s;
+}
+
+.reveal-delay-2 {
+    transition-delay: 0.3s;
+}
+
+.reveal-delay-3 {
+    transition-delay: 0.45s;
+}
+
+/* Header border fade-in when scrolled */
+header.scrolled {
+    background-color: rgba(252, 249, 244, 0.9) !important;
+    border-bottom-color: rgba(137, 114, 108, 0.25);
+    box-shadow: 0 4px 30px rgba(153, 65, 36, 0.03);
+}
