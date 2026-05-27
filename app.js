@@ -5,45 +5,37 @@
 document.addEventListener('DOMContentLoaded', () => {
     
     // ==========================================================================
-    // 1. Mobile Menu Toggle (Tailwind Compatible)
+    // 1. Mobile Nav Drawer
     // ==========================================================================
-    const mobileNavToggle = document.getElementById('mobile-menu-btn');
-    const studioNav = document.getElementById('nav-menu');
-    
-    if (mobileNavToggle && studioNav) {
-        mobileNavToggle.addEventListener('click', () => {
-            const isExpanded = mobileNavToggle.getAttribute('aria-expanded') === 'true';
-            mobileNavToggle.setAttribute('aria-expanded', !isExpanded);
-            mobileNavToggle.classList.toggle('active');
-            
-            // Toggle Tailwind layout classes dynamically
-            studioNav.classList.toggle('hidden');
-            studioNav.classList.toggle('flex');
-            studioNav.classList.toggle('flex-col');
-            studioNav.classList.toggle('absolute');
-            studioNav.classList.toggle('top-full');
-            studioNav.classList.toggle('left-0');
-            studioNav.classList.toggle('w-full');
-            studioNav.classList.toggle('bg-surface-bright');
-            studioNav.classList.toggle('p-6');
-            studioNav.classList.toggle('border-b');
-            studioNav.classList.toggle('border-outline-variant/20');
-            studioNav.classList.toggle('shadow-md');
-            studioNav.classList.toggle('z-50');
-            studioNav.classList.toggle('gap-4');
-        });
+    const menuBtn    = document.getElementById('mobile-menu-btn');
+    const drawer     = document.getElementById('mobile-nav-drawer');
+    const backdrop   = document.getElementById('mobile-nav-backdrop');
+    const burgerIcon = menuBtn && menuBtn.querySelector('.burger-icon');
 
-        // Close menu when nav links are clicked on mobile
-        const navLinks = studioNav.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileNavToggle.setAttribute('aria-expanded', 'false');
-                mobileNavToggle.classList.remove('active');
-                
-                studioNav.classList.add('hidden');
-                studioNav.classList.remove('flex', 'flex-col', 'absolute', 'top-full', 'left-0', 'w-full', 'bg-surface-bright', 'p-6', 'border-b', 'border-outline-variant/20', 'shadow-md', 'z-50', 'gap-4');
-            });
-        });
+    const openDrawer = () => {
+        drawer.classList.add('open');
+        backdrop.classList.add('open');
+        burgerIcon.classList.add('open');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeDrawer = () => {
+        drawer.classList.remove('open');
+        backdrop.classList.remove('open');
+        burgerIcon.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    };
+
+    if (menuBtn && drawer && backdrop) {
+        menuBtn.addEventListener('click', () =>
+            drawer.classList.contains('open') ? closeDrawer() : openDrawer()
+        );
+        backdrop.addEventListener('click', closeDrawer);
+        drawer.querySelectorAll('a').forEach(link =>
+            link.addEventListener('click', closeDrawer)
+        );
     }
 
     // ==========================================================================

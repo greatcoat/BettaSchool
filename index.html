@@ -25,7 +25,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
     
     <!-- Custom style sheet for interactive background effects & scroll reveals -->
-    <link href="style.css?v=2" rel="stylesheet">
+    <link href="style.css?v=3" rel="stylesheet">
 
     <!-- Tailwind Theme Configuration -->
     <script id="tailwind-config">
@@ -155,12 +155,33 @@
                 <a class="hidden md:inline-flex items-center justify-center bg-primary text-on-primary font-label-md text-label-md rounded-full px-6 py-3 hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-sm" href="https://calendar.app.google/DrDrZ8fAkFFFxFdj8" target="_blank">
                     Book a Free Intro Call
                 </a>
-                <button aria-label="Menu" class="md:hidden p-2 text-primary" id="mobile-menu-btn">
-                    <span class="material-symbols-outlined text-[24px]">menu</span>
+                <button aria-label="Toggle menu" class="md:hidden p-2 flex items-center justify-center" id="mobile-menu-btn">
+                    <div class="burger-icon">
+                        <span class="burger-line"></span>
+                        <span class="burger-line"></span>
+                        <span class="burger-line"></span>
+                    </div>
                 </button>
             </div>
         </div>
     </header>
+
+    <!-- Mobile nav backdrop -->
+    <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+
+    <!-- Mobile nav drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+        <nav class="flex flex-col flex-1 justify-center gap-0">
+            <a class="mobile-nav-link" href="#">Home</a>
+            <a class="mobile-nav-link" href="#subjects">Subjects</a>
+            <a class="mobile-nav-link" href="#about">About Brigitta</a>
+            <a class="mobile-nav-link" href="#why-us">Why BettaSchool</a>
+            <a class="mobile-nav-link" href="#contact">Contact</a>
+        </nav>
+        <a class="block w-full text-center bg-primary text-on-primary font-label-md text-label-md rounded-full px-8 py-4 mt-10" href="https://calendar.app.google/DrDrZ8fAkFFFxFdj8" target="_blank">
+            Book a Free Intro Call
+        </a>
+    </div>
 
     <main class="relative z-10">
         <!-- Hero Section -->
@@ -407,6 +428,6 @@
     </footer>
 
     <!-- Canvas and Parallax Interaction Script -->
-    <script src="app.js?v=2"></script>
+    <script src="app.js?v=3"></script>
 </body>
 </html>

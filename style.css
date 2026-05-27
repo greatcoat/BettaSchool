@@ -76,6 +76,108 @@
     }
 }
 
+/* ==========================================================================
+   3a. Mobile Nav Drawer
+   ========================================================================== */
+
+/* Burger icon */
+.burger-icon {
+    width: 22px;
+    height: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.burger-line {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: #994124;
+    border-radius: 2px;
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                opacity 0.2s ease,
+                width 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    transform-origin: center;
+}
+
+.burger-icon.open .burger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.burger-icon.open .burger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.burger-icon.open .burger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Backdrop */
+.mobile-nav-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(28, 28, 25, 0.45);
+    z-index: 55;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+.mobile-nav-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Drawer */
+.mobile-nav-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 78%;
+    max-width: 300px;
+    height: 100vh;
+    height: 100svh;
+    background: #fcf9f4;
+    z-index: 60;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    padding: 96px 32px 48px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -8px 0 40px rgba(28, 28, 25, 0.1);
+}
+.mobile-nav-drawer.open {
+    transform: translateX(0);
+}
+
+/* Nav links */
+.mobile-nav-link {
+    display: block;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #1c1c19;
+    text-decoration: none;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(220, 193, 185, 0.4);
+    transition: color 0.2s ease, padding-left 0.25s ease;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+}
+.mobile-nav-link:first-child {
+    border-top: 1px solid rgba(220, 193, 185, 0.4);
+}
+.mobile-nav-link:active {
+    color: #994124;
+    padding-left: 6px;
+}
+
+@media (hover: hover) {
+    .mobile-nav-link:hover {
+        color: #994124;
+        padding-left: 6px;
+    }
+}
+
 /* Mobile hero fills full viewport, accounting for browser chrome */
 @media (max-width: 767px) {
     .hero-section {
