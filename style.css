@@ -76,6 +76,48 @@
     }
 }
 
+/* ==========================================================================
+   3c. Testimonial Carousel (mobile only)
+   ========================================================================== */
+.testimonial-carousel-outer {
+    overflow: hidden;
+}
+
+.testimonial-carousel-track {
+    display: flex;
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+
+.testimonial-slide {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+.testimonial-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.testimonial-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #dcc1b9;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.25s, transform 0.25s;
+}
+
+.testimonial-dot.active {
+    background-color: #994124;
+    transform: scale(1.25);
+}
+
 /* About section portrait blob — organic shape */
 .about-blob {
     border-radius: 62% 38% 55% 45% / 58% 44% 56% 42%;

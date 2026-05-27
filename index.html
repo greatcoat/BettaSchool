@@ -195,17 +195,41 @@
                 <div class="text-center mb-12">
                     <h2 class="font-headline-lg text-headline-lg md:text-[40px] text-on-surface mb-4">Kind Words from Students</h2>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
-                    <!-- Testimonial 1 -->
-                    <div class="flex flex-col gap-4 rounded-3xl bg-surface-bright border border-outline-variant/30 shadow-sm transition-all hover:shadow-md p-6 md:p-8 hover-glow reveal reveal-delay-1">
+
+                <!-- Mobile: swipeable carousel -->
+                <div class="md:hidden">
+                    <div class="testimonial-carousel-outer">
+                        <div class="testimonial-carousel-track">
+                            <div class="testimonial-slide">
+                                <div class="flex flex-col gap-6 rounded-3xl bg-surface-bright border border-outline-variant/30 shadow-sm p-8">
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed italic text-center">"I enjoyed having Ms Gaylard as my Matric art/design teacher! Although our time together was short, Ms Gaylard was a great support and encouragement to me throughout the year, frequently keeping me accountable with time management and helping me with brainstorming. I found her assistance helpful and insightful and her company pleasant!"</p>
+                                    <p class="font-label-sm text-label-sm text-primary">— Hannah O., Matric Art Student</p>
+                                </div>
+                            </div>
+                            <div class="testimonial-slide">
+                                <div class="flex flex-col gap-6 rounded-3xl bg-surface-bright border border-outline-variant/30 shadow-sm p-8">
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed italic text-center">"Ms Brigitta Gaylard was extremely helpful in preparing me for my Life Orientation exam. On very short notice, she equipped me with the necessary content and skills to adequately prepare for my June examination. I found her to be efficient and effective in revising the topics of Life Orientation and would highly recommend her services for other Matric LO students."</p>
+                                    <p class="font-label-sm text-label-sm text-primary">— William Halton, Matric LO Student</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-dots">
+                        <button aria-label="Slide 1" class="testimonial-dot active"></button>
+                        <button aria-label="Slide 2" class="testimonial-dot"></button>
+                    </div>
+                </div>
+
+                <!-- Desktop: side-by-side grid -->
+                <div class="hidden md:grid grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
+                    <div class="flex flex-col gap-4 rounded-3xl bg-surface-bright border border-outline-variant/30 shadow-sm transition-all hover:shadow-md p-8 hover-glow reveal reveal-delay-1">
                         <div>
                             <h3 class="font-headline-md text-headline-md text-on-surface">Hannah O.</h3>
                             <p class="font-label-sm text-label-sm uppercase tracking-widest text-primary mt-1">Matric Art Student</p>
                         </div>
                         <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">"I enjoyed having Ms Gaylard as my Matric art/design teacher! Although our time together was short, Ms Gaylard was a great support and encouragement to me throughout the year, frequently keeping me accountable with time management and helping me with brainstorming. I found her assistance helpful and insightful and her company pleasant!"</p>
                     </div>
-                    <!-- Testimonial 2 -->
-                    <div class="flex flex-col gap-4 rounded-3xl bg-surface-bright border border-outline-variant/30 shadow-sm transition-all hover:shadow-md p-6 md:p-8 hover-glow reveal reveal-delay-2">
+                    <div class="flex flex-col gap-4 rounded-3xl bg-surface-bright border border-outline-variant/30 shadow-sm transition-all hover:shadow-md p-8 hover-glow reveal reveal-delay-2">
                         <div>
                             <h3 class="font-headline-md text-headline-md text-on-surface">William Halton</h3>
                             <p class="font-label-sm text-label-sm uppercase tracking-widest text-primary mt-1">Matric LO Student</p>

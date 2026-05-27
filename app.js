@@ -293,7 +293,35 @@ document.addEventListener('DOMContentLoaded', () => {
     drawLoop();
 
     // ==========================================================================
-    // 5. Scroll Reveal Observer
+    // 5. Testimonial Carousel (mobile swipe)
+    // ==========================================================================
+    const carouselTrack = document.querySelector('.testimonial-carousel-track');
+    const carouselDots = document.querySelectorAll('.testimonial-dot');
+
+    if (carouselTrack && carouselDots.length) {
+        let current = 0;
+        let touchStartX = 0;
+
+        const goTo = (index) => {
+            current = Math.max(0, Math.min(index, carouselDots.length - 1));
+            carouselTrack.style.transform = `translateX(-${current * 100}%)`;
+            carouselDots.forEach((d, i) => d.classList.toggle('active', i === current));
+        };
+
+        carouselTrack.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+        }, { passive: true });
+
+        carouselTrack.addEventListener('touchend', (e) => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+        }, { passive: true });
+
+        carouselDots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+    }
+
+    // ==========================================================================
+    // 6. Scroll Reveal Observer
     // ==========================================================================
     const revealElements = document.querySelectorAll('.reveal');
     
