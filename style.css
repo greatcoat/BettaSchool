@@ -76,6 +76,14 @@
     }
 }
 
+/* Mobile hero fills full viewport, accounting for browser chrome */
+@media (max-width: 767px) {
+    .hero-section {
+        min-height: 100vh;
+        min-height: 100svh;
+    }
+}
+
 /* ==========================================================================
    3c. Testimonial Carousel (mobile only)
    ========================================================================== */
