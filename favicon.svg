@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 46" fill="none">
+  <!-- Palette body -->
+  <ellipse cx="18" cy="13" rx="14" ry="11" fill="#C4A07A"/>
+  <!-- Thumb hole -->
+  <ellipse cx="24" cy="7" rx="3" ry="4" fill="#EDD9BB" opacity="0.65"/>
+  <!-- Paint dots -->
+  <circle cx="10" cy="12" r="2.5" fill="#994124"/>
+  <circle cx="15" cy="7"  r="2.5" fill="#9B75C0"/>
+  <circle cx="20" cy="6"  r="2.5" fill="#4A86C8"/>
+  <circle cx="26" cy="9"  r="2.5" fill="#5A7F4E"/>
+  <circle cx="20" cy="17" r="2.5" fill="#C47A5A"/>
+  <circle cx="25" cy="17" r="2.5" fill="#EDD9BB"/>
+  <!-- Heart -->
+  <path d="M18 44 C18 44 8 38 8 31 C8 27.5 10.5 25.5 13.5 25.5 C15.2 25.5 16.8 26.4 18 27.7 C19.2 26.4 20.8 25.5 22.5 25.5 C25.5 25.5 28 27.5 28 31 C28 38 18 44 18 44Z" fill="#3D5C2A"/>
+</svg>
