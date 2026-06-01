@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh auth *)",
+      "Bash(vercel --version)",
+      "Bash(brew --version)",
+      "Bash(npm --version)",
+      "Bash(ls ~/.ssh/ 2>&1)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(npm install *)",
+      "Bash(/Users/joshuadavidpadoa/.nvm/versions/node/v25.9.0/bin/npm install *)",
+      "Bash(curl -sI \"https://github.com/cli/cli/releases/download/v2.92.0/gh_2.92.0_macOS_arm64.tar.gz\")",
+      "Bash(curl -L --retry 3 \"https://github.com/cli/cli/releases/download/v2.92.0/gh_2.92.0_macOS_arm64.tar.gz\" -o /tmp/gh2.tar.gz)",
+      "Read(//tmp/**)",
+      "Bash(tar -tzf /tmp/gh2.tar.gz)",
+      "Bash(npm config *)",
+      "Read(//usr/local/lib/node_modules/**)",
+      "Bash(curl -s \"https://api.github.com/repos/cli/cli/releases/latest\")",
+      "Bash(python3 -c \"import sys,json; data=json.load\\(sys.stdin\\); assets=[a['browser_download_url'] for a in data['assets'] if 'macOS_arm64' in a['name']]; print\\(data['tag_name']\\); [print\\(a\\) for a in assets]\")",
+      "Bash(curl -L \"https://github.com/cli/cli/releases/download/v2.92.0/gh_2.92.0_macOS_arm64.zip\" -o /tmp/gh.zip)",
+      "Bash(unzip -q /tmp/gh.zip -d /tmp/gh_extracted)",
+      "Bash(cp /tmp/gh_extracted/gh_2.92.0_macOS_arm64/bin/gh ~/.local/bin/gh)",
+      "Bash(chmod +x ~/.local/bin/gh)",
+      "Bash(~/.local/bin/gh --version)",
+      "Bash(~/.local/bin/vercel --version)"
+    ]
+  }
+}

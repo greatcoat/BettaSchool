@@ -5,36 +5,41 @@
 document.addEventListener('DOMContentLoaded', () => {
     
     // ==========================================================================
-    // 1. Mobile Nav Drawer
+    // 1. Mobile Nav Overlay (Full-screen fade)
     // ==========================================================================
     const menuBtn    = document.getElementById('mobile-menu-btn');
-    const drawer     = document.getElementById('mobile-nav-drawer');
-    const backdrop   = document.getElementById('mobile-nav-backdrop');
+    const overlay    = document.getElementById('mobile-nav-overlay');
+    const closeBtn   = document.getElementById('mobile-nav-close');
     const burgerIcon = menuBtn && menuBtn.querySelector('.burger-icon');
 
-    const openDrawer = () => {
-        drawer.classList.add('open');
-        backdrop.classList.add('open');
-        burgerIcon.classList.add('open');
+    /** Open the full-screen overlay */
+    const openOverlay = () => {
+        overlay.classList.add('open');
+        burgerIcon && burgerIcon.classList.add('open');
         menuBtn.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden'; // Prevent background scroll
     };
 
-    const closeDrawer = () => {
-        drawer.classList.remove('open');
-        backdrop.classList.remove('open');
-        burgerIcon.classList.remove('open');
+    /** Close the full-screen overlay */
+    const closeOverlay = () => {
+        overlay.classList.remove('open');
+        burgerIcon && burgerIcon.classList.remove('open');
         menuBtn.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
     };
 
-    if (menuBtn && drawer && backdrop) {
+    if (menuBtn && overlay) {
+        // Hamburger toggles the overlay
         menuBtn.addEventListener('click', () =>
-            drawer.classList.contains('open') ? closeDrawer() : openDrawer()
+            overlay.classList.contains('open') ? closeOverlay() : openOverlay()
         );
-        backdrop.addEventListener('click', closeDrawer);
-        drawer.querySelectorAll('a').forEach(link =>
-            link.addEventListener('click', closeDrawer)
+
+        // X button closes the overlay
+        closeBtn && closeBtn.addEventListener('click', closeOverlay);
+
+        // Clicking any nav link inside the overlay also closes it
+        overlay.querySelectorAll('a').forEach(link =>
+            link.addEventListener('click', closeOverlay)
         );
     }
 

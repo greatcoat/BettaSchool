@@ -144,7 +144,6 @@
             </a>
             
             <nav class="hidden md:flex items-center gap-8" id="nav-menu">
-                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Home</a>
                 <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#subjects">Subjects</a>
                 <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#about">About Brigitta</a>
                 <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#why-us">Why BettaSchool</a>
@@ -166,19 +165,42 @@
         </div>
     </header>
 
-    <!-- Mobile nav backdrop -->
-    <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+    <!-- Mobile Nav Overlay (Full-screen fade) -->
+    <div
+        aria-label="Navigation menu"
+        aria-modal="true"
+        class="mobile-nav-overlay"
+        id="mobile-nav-overlay"
+        role="dialog"
+    >
+        <!-- Close button — mirrors hamburger position (top-right) -->
+        <button
+            aria-label="Close menu"
+            class="mobile-nav-close"
+            id="mobile-nav-close"
+        >
+            <!-- SVG X icon -->
+            <svg aria-hidden="true" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 6L18 18M6 18L18 6" stroke="#994124" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            </svg>
+        </button>
 
-    <!-- Mobile nav drawer -->
-    <div class="mobile-nav-drawer" id="mobile-nav-drawer">
-        <nav class="flex flex-col flex-1 justify-center gap-0">
-            <a class="mobile-nav-link" href="#">Home</a>
-            <a class="mobile-nav-link" href="#subjects">Subjects</a>
-            <a class="mobile-nav-link" href="#about">About Brigitta</a>
-            <a class="mobile-nav-link" href="#why-us">Why BettaSchool</a>
-            <a class="mobile-nav-link" href="#contact">Contact</a>
+        <!-- Centred nav links -->
+        <nav aria-label="Mobile navigation">
+            <ul class="mobile-nav-list">
+                <li><a class="mobile-nav-link" href="#subjects">Subjects</a></li>
+                <li><a class="mobile-nav-link" href="#about">About Brigitta</a></li>
+                <li><a class="mobile-nav-link" href="#why-us">Why BettaSchool</a></li>
+                <li><a class="mobile-nav-link" href="#contact">Contact</a></li>
+            </ul>
         </nav>
-        <a class="block w-full text-center bg-primary text-on-primary font-label-md text-label-md rounded-full px-8 py-4 mt-10" href="https://calendar.app.google/DrDrZ8fAkFFFxFdj8" target="_blank">
+
+        <!-- CTA button -->
+        <a
+            class="mobile-nav-cta"
+            href="https://calendar.app.google/DrDrZ8fAkFFFxFdj8"
+            target="_blank"
+        >
             Book a Free Intro Call
         </a>
     </div>

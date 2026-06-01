@@ -77,10 +77,10 @@
 }
 
 /* ==========================================================================
-   3a. Mobile Nav Drawer
+   3a. Mobile Nav Overlay (Full-screen fade)
    ========================================================================== */
 
-/* Burger icon */
+/* ---- Hamburger icon (three horizontal lines) ---- */
 .burger-icon {
     width: 22px;
     height: 16px;
@@ -96,11 +96,11 @@
     background-color: #994124;
     border-radius: 2px;
     transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
-                opacity 0.2s ease,
-                width 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+                opacity 0.2s ease;
     transform-origin: center;
 }
 
+/* Animate hamburger → X while overlay is open */
 .burger-icon.open .burger-line:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
 }
@@ -112,70 +112,126 @@
     transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Backdrop */
-.mobile-nav-backdrop {
+
+
+/**
+ * Full-screen overlay — sits over all page content.
+ * Closed state: invisible + non-interactive.
+ * Open state (.open): fades in over 300ms.
+ */
+.mobile-nav-overlay {
+    /* Positioning */
     position: fixed;
     inset: 0;
-    background: rgba(28, 28, 25, 0.45);
-    z-index: 55;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.35s ease;
-}
-.mobile-nav-backdrop.open {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-/* Drawer */
-.mobile-nav-drawer {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 78%;
-    max-width: 300px;
+    width: 100vw;
     height: 100vh;
-    height: 100svh;
-    background: #fcf9f4;
-    z-index: 60;
-    transform: translateX(100%);
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    padding: 96px 32px 48px;
+    z-index: 100; /* Highest layer — above everything */
+
+    /* Appearance */
+    background-color: #ffffff;
+
+    /* Layout — column, centred */
     display: flex;
     flex-direction: column;
-    box-shadow: -8px 0 40px rgba(28, 28, 25, 0.1);
-}
-.mobile-nav-drawer.open {
-    transform: translateX(0);
+    align-items: center;
+    justify-content: center;
+
+    /* Closed state */
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+
+    /* Smooth fade transition */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
-/* Nav links */
+/* Open state — toggled by JavaScript */
+.mobile-nav-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+}
+
+/**
+ * X close button — top-right corner, mirrors the hamburger position.
+ * Uses the same px-margin-mobile padding + py-4 as the header flex row.
+ */
+.mobile-nav-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* Match header padding: py-4 (1rem) top, px-margin-mobile (16px) right + inner button padding (8px) */
+    padding: 1.25rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: opacity 0.2s ease;
+}
+
+.mobile-nav-close:hover {
+    opacity: 0.7;
+}
+
+/**
+ * Centred navigation list — no bullets, 2rem vertical gap between items.
+ */
+.mobile-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+}
+
+/* Nav link styling — dark gray/brown, bold */
 .mobile-nav-link {
-    display: block;
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 26px;
+    display: inline-block;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.25rem; /* 20px */
     font-weight: 700;
-    color: #1c1c19;
+    color: #3d2b25; /* Dark warm brown */
     text-decoration: none;
-    padding: 18px 0;
-    border-bottom: 1px solid rgba(220, 193, 185, 0.4);
-    transition: color 0.2s ease, padding-left 0.25s ease;
     letter-spacing: -0.01em;
-    line-height: 1.1;
-}
-.mobile-nav-link:first-child {
-    border-top: 1px solid rgba(220, 193, 185, 0.4);
-}
-.mobile-nav-link:active {
-    color: #994124;
-    padding-left: 6px;
+    line-height: 1.2;
+    transition: color 0.2s ease;
 }
 
-@media (hover: hover) {
-    .mobile-nav-link:hover {
-        color: #994124;
-        padding-left: 6px;
-    }
+.mobile-nav-link:hover,
+.mobile-nav-link:focus-visible {
+    color: #994124; /* Primary warm brown */
+    outline: none;
+}
+
+/**
+ * CTA button — pill-shaped, warm brown, white text, centred below links.
+ */
+.mobile-nav-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.5rem;
+    padding: 0.875rem 2rem;
+    background-color: #994124; /* Primary warm brown */
+    color: #ffffff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.875rem; /* 14px */
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 9999px; /* Fully pill-shaped */
+    box-shadow: 0 2px 12px rgba(153, 65, 36, 0.18); /* Very faint drop shadow */
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mobile-nav-cta:hover {
+    background-color: #7d2c11;
+    box-shadow: 0 4px 20px rgba(153, 65, 36, 0.28);
 }
 
 /* Mobile hero fills full viewport, accounting for browser chrome */
